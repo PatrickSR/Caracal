@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Electron </title>
+    <title>Caracal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <!--    <link rel="stylesheet" href="node_modules/materialize-css/css/ghpages-materialize.css" />-->
     <link rel="stylesheet" href="http://fonts.useso.com/icon?family=Material+Icons">
@@ -18,62 +18,115 @@
 <body>
     <nav>
         <div class="nav-wrapper light-blue darken-3">
-            <a href="#" class="brand-logo">Axpress</a>
+            <a href="#" class="brand-logo">Caracal</a>
 
             <a class="tooltipped right" data-position="bottom" data-delay="50" data-tooltip="v0.0.1"><i class="material-icons">info_outline</i></a>
         </div>
     </nav>
-    <div class="order_list">
-        <table class="bordered">
-            <thead>
-                <tr>
-                    <th data-field="id">单号</th>
-                    <th data-field="name">快递公司</th>
-                    <th data-field="price">最后消息</th>
-                    <th data-field="标签">标签</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                <tr>
-                    <td>Alvin</td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                    <td>
-                        <div class="chip">Tag</div>
-                        <div class="chip">Tag</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                    <td>
-                        <div class="chip">Tag</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jonathan</td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                    <td>
-                        <div class="chip">Tag</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </li>
+    </ul>
 
 
-    <div id="div_float_button">
-        <a v-on:click="addOrder" class="btn-floating btn-large waves-effect waves-light light-blue darken-3 modal-trigger" href="#model1">
+    <div id="div_float_button" data-target="modal1">
+        <a v-on:click="addOrder" class="btn-floating btn-large waves-effect waves-light light-blue darken-3 modal-trigger">
             <i class="material-icons">add</i>
         </a>
     </div>
-    
-    
 
-    <div id="modal1" class="modal">
+
+
+    <div id="modal1" class="modal bottom-sheet">
         <div class="modal-content">
             <h4>Modal Header</h4>
             <p>A bunch of text</p>
