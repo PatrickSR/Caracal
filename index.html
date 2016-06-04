@@ -4,121 +4,62 @@
 <head>
     <meta charset="utf-8">
     <title>Caracal</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <!--    <link rel="stylesheet" href="node_modules/materialize-css/css/ghpages-materialize.css" />-->
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">-->
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="http://fonts.useso.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="index.css">
 
+    <script>
+        // 重命名 Electron 提供的 require
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+
     <!--    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
-    <!--    <script src="node_modules/materialize-css/js/materialize.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>-->
 </head>
 
 <body>
     <nav>
-        <div class="nav-wrapper light-blue darken-3">
-            <a href="#" class="brand-logo">Caracal</a>
+        <div class="nav-wrapper">
+            Caracal
+            <a class="tooltipped right" data-position="left" data-delay="50">
 
-            <a class="tooltipped right" data-position="bottom" data-delay="50" data-tooltip="v0.0.1"><i class="material-icons">info_outline</i></a>
+                <i class="material-icons">info_outline</i>
+            </a>
         </div>
     </nav>
 
-    <ul class="collapsible" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
+    <ul id="express_list" class="collapsible" data-collapsible="accordion">
+        <li v-for="list in lists">
+            <div class="collapsible-header">
+                <span id="express_company">{{list.company}}</span>
+                <span id="express_nu">{{list.nu}}</span>
+                <span v-if="list.data[0]" class="right">{{list.data[0].context}}</span>
+                <span v-else class="right">暂无记录</span>
             </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
+            <div id="express_details" class="collapsible-body row">
+                <!--快递内容-->
+                <ul class="col s9">
+                    <li v-for="(index,d) in list.data">
+                        <span v-if="index == 0" style="color:dodgerblue">{{d.context}}</span>
+                        <span v-else>{{d.context}}</span>
+                    </li>
+                </ul>
+
+                <div class="col s3">
+                    <img v-bind:src=list.ico>
+                </div>
             </div>
         </li>
     </ul>
 
 
-    <div id="div_float_button" data-target="modal1">
+    <div id="div_float_button" data-target="add_express_form">
         <a v-on:click="addOrder" class="btn-floating btn-large waves-effect waves-light light-blue darken-3 modal-trigger">
             <i class="material-icons">add</i>
         </a>
@@ -126,18 +67,24 @@
 
 
 
-    <div id="modal1" class="modal bottom-sheet">
+    <div id="add_express_form" class="modal bottom-sheet">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-    </div>
+            <h5 style="margin-left: 10px">添加快递单</h5>
+            <div id="add_express_input_form">
+                <!--添加快递单-->
+                <div class="input-field col s12">
+                    <input v-model="express_id" type="text" class="validate">
+                    <label for="express_id">请输入快递单</label>
+                </div>
+            </div>
 
-    <script src="node_modules/vue/dist/vue.min.js"></script>
-    <script src="main/app.js"></script>
+            <div class="modal-footer">
+                <a v-on:click="add_express" class=" modal-action  waves-effect btn-flat">确定</a>
+            </div>
+        </div>
+
+        <script src="node_modules/vue/dist/vue.min.js"></script>
+        <script src="main/app.js"></script>
 </body>
 
 </html>

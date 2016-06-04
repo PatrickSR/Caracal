@@ -18,11 +18,12 @@ function onClosed() {
 
 function createMainWindow() {
     const win = new electron.BrowserWindow({
-        width: 1000
-        , height: 800
+        width: 800
+        , height: 600
         , webPreferences: {
-            nodeIntegration: false
+            nodeIntegration: true
         }
+        , resizable: false
     });
 
     win.loadURL(`file://${__dirname}/index.html`);
