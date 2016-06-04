@@ -1,29 +1,32 @@
-html,
-body {
-	padding: 0;
-	margin: 0;
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
 
 body {
-	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -250px;
+    text-align: center;
 }
 
 header h1 {
-	font-size: 60px;
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
+    font-size: 60px;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
 }
 
 .appbar {
@@ -35,4 +38,21 @@ header h1 {
 
 #add_icon {
     margin: 4px
+}
+
+.order_list {
+    margin: 20px;
+}
+
+.brand-logo {
+    margin-left: 20px
+}
+
+#div_float_button {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
