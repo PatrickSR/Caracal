@@ -49,6 +49,11 @@ nav{
     font-size: xx-large
 }
 
+nav img{
+    width: 40px;
+    height: 24px;
+}
+
 #express_list{
     margin: 10px;
 }

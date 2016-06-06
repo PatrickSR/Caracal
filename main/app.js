@@ -1,6 +1,7 @@
 var Vue = nodeRequire('Vue')
 Vue.use(nodeRequire('vue-resource'))
 
+var apikey = '8c298090c899e40d62f635ada08535a2'
 
 //初始化快递单，从LocalStorage获取
 var expressList = []
@@ -61,7 +62,8 @@ function queryExpress(vue, id) {
         if (express.success) {
             expressList.push(express)
             updateLocalStorage()
-
+            //添加快递单后，文本框清空
+            vue.express_id = '';
         } else {
             var errorContent = errorCode['e'+express.errNum];
             Materialize.toast(errorContent, 3000, 'rounded')

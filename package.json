@@ -1,8 +1,8 @@
 {
   "name": "caracal",
   "productName": "Caracal",
-  "version": "0.0.0",
-  "description": "My badass app",
+  "version": "0.0.1",
+  "description": "一个查询快递的软件",
   "license": "MIT",
   "repository": "lqxing001/Caracal",
   "author": {
@@ -33,6 +33,7 @@
     "devtron": "^1.1.0",
     "electron-packager": "^7.0.0",
     "electron-prebuilt": "^1.0.1",
+    "grunt-build-atom-shell": "^2.1.1",
     "xo": "^0.15.0"
   },
   "xo": {
